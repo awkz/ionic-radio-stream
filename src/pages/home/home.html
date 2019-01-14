@@ -1,14 +1,34 @@
 <ion-header>
-  <ion-navbar>
+  <ion-toolbar color="danger" transparent>
     <ion-title>
-      Ionic Blank
+      PUSPINDES
     </ion-title>
-  </ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="heart-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+  <div class="header-content">
+    <h2 class="genre-title">Radio Desa</h2>
+    <span class="genre-meta">Disiarkan langsung dari studio Puspindes.</span>
+    
+  </div>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="content" padding>
+
+  <button dark class="icon-button" (click)="play()">
+    <ion-icon class="larger" name="play"></ion-icon>
+  </button>
+  <button dark class="icon-button" (click)="pause()">
+    <ion-icon class="larger" name="pause"></ion-icon>
+  </button>
+  <div class="status">
+    <ng-container *ngIf="(status !== null)">
+      <span color="status == 'disconnect' ? 'danger' : 'dark'">{{status}}</span>
+    </ng-container>
+  </div>
+  
+  
 </ion-content>
